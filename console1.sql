@@ -1,10 +1,16 @@
+/*скрипт создания таблицы с параметрами:
+название таблицы — PERSONS;
+содержит в себе 5 столбцов — name, surname, age, phone_number, city_of_living;
+первичным ключом будет сочетание name, surname, age.
+*/
+
 create schema first_schema;
 
 create table first_schema.persons
 (
     name           varchar(30) not null,
     surname        varchar(50) not null,
-    age            smallint    not null,
+    age            smallint    not null check ( age > 0 and age < 130 ),
     phone_number   varchar(11),
     city_of_living varchar(30),
 
